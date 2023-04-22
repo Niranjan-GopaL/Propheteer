@@ -1,0 +1,9 @@
+<-------PROGRESS LOGS ------------------------------------------------------------------------->
+
+1) npx create-next-app@latest --experimental-app
+
+NEXT 13.3 (YOU ARE WORKING WITH BLEEDING EDGE TECH, some parts are still in production)
+
+2) I copied the files from my-next-app to Propheteer ( DOES THIS EFFECT LATER ??)
+
+3) npm i @heroicons/react
