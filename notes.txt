@@ -1,9 +1,124 @@
+    |||REMEMBER|||
+
+1)  remember NEXT = PERFOMANCE (extremely optimised for performance)
+
+2)  Tailwind doc (ctrl + alt + T) => AWESOME 
+
+3)  tsrafce and other snippets are still golden.
+
+------------------------------ABOUT NEXT 13 --------------------------------------------------------------------------------->
+
+
+- In Next 12 we had -app  
+                    -page (all the file and folder strucute)
+- In Next 13 we only have - app-.
+                                |---> api (for all the backend folder)
+                                |---> testing-. (a normal folder)
+                                |             |---->page.ts (has some components) <== this would be shown at localhost:300/testing becuase" page" is a keyword in NExt 13
+                                |
+                                |---> (testing) means its not gonna be included as a route unlike the above one 
+
+https://beta.nextjs.org/docs/app-directory-roadmap
+https://beta.nextjs.org/docs/routing/defining-routes
+
+
+                          
+-----------------------------Scope for improvemetns ------------------------------------------------------------------>
+
+1)  We are not implementing any Authentication (Login/SIgn-up). Try watching this fireship's 100sec
+    video for HAVING AN INSANELY AWESOME AUTH really easily. https://www.youtube.com/watch?v=yufqeJLP1rI 
+                                                            https://www.youtube.com/watch?v=MqczHS3Z2bc 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <-------PROGRESS LOGS ------------------------------------------------------------------------->
 
-1) npx create-next-app@latest --experimental-app
+1)  npx create-next-app@latest --experimental-app
 
 NEXT 13.3 (YOU ARE WORKING WITH BLEEDING EDGE TECH, some parts are still in production)
 
-2) I copied the files from my-next-app to Propheteer ( DOES THIS EFFECT LATER ??)
+2)  I copied the files from my-next-app to Propheteer ( DOES THIS EFFECT LATER ??)
 
-3) npm i @heroicons/react
+3)  npm i @heroicons/react
+
+4)  in layout.tsx we mosified title and description
+
+    Configuring fonts (layout.tsx)
+    Next has there own automatic self hosting for fonts (Normally we take stuff from Google fonts)
+
+    Configuring TailWind with Next. MUI is not yet fully compatible with Next - you can use it in client
+    components and server components.But TailWind works really well with MUI.
+    (Head over to TailWind with Next docs)
+
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+    and so on ..
+
+    Tailwind fully configured!
+
+5)  In tailwind.config.js you can configure the themes
+
+<------------------------------------------ WE ARE EXTENDING TAILWIND WITH some stuff that we add--------------
+  theme: {
+    extend: {
+      colors: {
+        "wh-10": "#F4F4F4",
+        "wh-50": "#FBFBFB",
+        "wh-100": "#C9C9C9",
+        "wh-300": "#939393",
+        "wh-500": "#595959",
+        "wh-900": "#0F0F0F",
+        "accent-red": "#EA9648",
+        "accent-orange": "#F6CF68",
+        "accent-green": "#C2E9B4",
+      },
+      backgroundImage: (theme) => ({
+        "gradient-gradual":
+          "linear-gradient(180deg, rgba(116, 116, 116, 0) 66.15%, #000000 100%)",
+      }),
+    },
+    screens: {
+      xs: "480px",
+      sm: "768px",
+      md: "1060px",
+    },
+  },
+  <------------------------------------------------------------------------------------------------------>
+
+
+6) TAILWIND PLUGINS!!!!
+
+   npm i @tailwindcss/line-clamp  (for very long tailwind classnames it'll wrap it to few dots)
+   npm i -D  @tailwindcss/typography  (Normally we can't apply Tailwindcss to HTML or markdown that we recieve from backend  ) 
+
+   Theses plugins must be added to plugins in tailwind.config.js
+
+
+   Applying this in global.css :-
+   //we want html body to take the full height and width. Everything needs to start 
+   //with text-small (instead of the regular default size)
+    html,
+    body,
+    #root,
+    .app {
+    height: 100%;
+    width: 100%;
+    @apply text-sm;
+    }
+
+7) File and folder structure created 
+
+(home)
+(shared)
+post/[id]<---- dynamic routes
